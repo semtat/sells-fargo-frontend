@@ -1,18 +1,28 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { useAuthStore } from '@/stores/auth.store'
 
-const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      redirect: "/auth"
-    },
-    {
-      path: '/auth',
-      name: 'auth',
-      component: () => import('../views/AuthorizationView.vue')
-    }
-  ]
+export const router = createRouter({
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: () => import('@/views/HomeView.vue')
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: () => import('@/views/LoginView.vue')
+        }
+    ]
 })
 
-export default router
+router.beforeEach(async(to) => {
+    const publicPages = ['/login']
+    const authRequired = !publicPages.includes(to.path)
+    const authStore = useAuthStore()
+    if (authRequired && !authStore.userSession) {
+        authStore.returnUrl = to.fullPath
+        return '/login'
+    }
+})
