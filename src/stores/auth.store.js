@@ -26,7 +26,7 @@ export const useAuthStore = defineStore('auth', () => {
     }
 
     function logout() {
-        this.userSession = null;
+        userSession.value = null;
         deleteCookie('session')
         router.push('/login');
     }
