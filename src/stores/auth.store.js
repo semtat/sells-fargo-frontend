@@ -12,8 +12,8 @@ export const useAuthStore = defineStore('auth', () => {
 
     async function login(username, password) {
         const params = {
-            username: username,
-            password: password
+            username: encodeURIComponent(username),
+            password: encodeURIComponent(password)
         }
         
         const userSessionResponse = await axios.get(baseLoginUrl, params)
