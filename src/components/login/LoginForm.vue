@@ -1,6 +1,6 @@
 <script setup>
     import { ref } from 'vue'
-    import { useAuthStore } from '@/stores/auth.store';
+    import { useAuthStore } from '@/stores/auth.store'
     
     const username = ref('')
     const password = ref('')
@@ -14,7 +14,7 @@
         
         if (!errorUsername.value && !errorPassword.value) {
             const authStore = useAuthStore()
-            authStore.login(username.value, password.value)
+            return authStore.login(username.value, password.value)
         }
     }
 </script>

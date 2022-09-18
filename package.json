@@ -4,6 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "vitest",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
@@ -16,11 +17,15 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^3.0.3",
+    "@vitest/coverage-c8": "^0.23.2",
+    "@vue/test-utils": "^2.0.2",
     "autoprefixer": "^10.4.10",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
+    "happy-dom": "^6.0.4",
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8",
-    "vite": "^3.0.9"
+    "vite": "^3.0.9",
+    "vitest": "^0.23.2"
   }
 }
