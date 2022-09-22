@@ -15,16 +15,15 @@ function checkStatusRequest(status) {
 }
 
 export async function getRequest(url, params) {
-    let res
     try {
         const response = await axios.get(url, params)
-        res = response.data
         return {
             status: response.status,
             type: checkStatusRequest(response.status),
-            data: res
+            data: response.data
         }
     } catch (error) {
+        let res
         if (error.response) {
             switch (error.response.status) {
                 case 401: res = 'Неправильный логин или пароль'
