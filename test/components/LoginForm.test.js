@@ -1,6 +1,5 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import axios from 'axios'
 import LoginForm from '@/components/login/LoginForm.vue'
 
 const testValues = {
@@ -20,17 +19,5 @@ describe('Тестирование полей компонента формы', 
     it('Проверка на пустой пароль', async () => {
         await inputPassword.setValue(testValues.password)
         expect(inputPassword.element.value.length).toBeGreaterThan(0)
-    })
-})
-
-describe('Запрос на авторизацию', async () => {
-    const baseLoginUrl = `${import.meta.env.VITE_API_LOGIN_URL}`
-    const testResponse = await axios.get(baseLoginUrl, testValues)
-    
-    it('Проверка на валидный запрос', () => {
-        expect(testResponse.status).toEqual(200)
-    })
-    it('Проверка на валидную строку', () => {
-        expect(testResponse.data).toBeTypeOf('string').toMatch('Logged in user session')
     })
 })
