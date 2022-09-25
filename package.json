@@ -20,6 +20,7 @@
     "@vitest/coverage-c8": "^0.23.2",
     "@vue/test-utils": "^2.0.2",
     "autoprefixer": "^10.4.10",
+    "axios-mock-adapter": "^1.21.2",
     "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
     "happy-dom": "^6.0.4",
