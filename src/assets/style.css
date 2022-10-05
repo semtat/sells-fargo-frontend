@@ -1,10 +1,33 @@
 /* eslint-disable */
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+html {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.logo-style {
+    font-family: 'Permanent Marker', cursive;
+}
+.header-style {
+    font-family: 'Caveat', cursive;
+}
 @layer components {
     .input-login {
-        @apply relative block mb-4 w-full appearance-none rounded-none border border-zinc-100 p-4 bg-zinc-100 text-gray-900 placeholder-zinc-400 focus:z-10 focus:border-green-500 focus:outline-none;
+        @apply relative block mb-4 w-full appearance-none rounded-none bg-zinc-600 border border-zinc-500 p-4
+      text-zinc-200 placeholder-zinc-400 focus:z-10 focus:border-yellow-600 focus:outline-none;
+    }
+    .nav-list a.router-link-exact-active {
+        @apply text-yellow-600 after:text-yellow-600 before:text-yellow-600
+    }
+    .nav-list a {
+        @apply whitespace-nowrap hover:text-yellow-600
+        after:content-['-'] before:content-['-'] after:text-zinc-200 before:text-zinc-200
+        after:mx-0.5 before:mx-0.5
+        hover:after:text-yellow-600 hover:before:text-yellow-600;
     }
 }

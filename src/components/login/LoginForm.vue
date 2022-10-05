@@ -1,13 +1,22 @@
 <script setup>
     import { ref } from 'vue'
     import { useAuthStore } from '@/stores/auth.store'
-    
+
     const username = ref('')
     const password = ref('')
 
     const errorUsername = ref(false)
     const errorPassword = ref(false)
     
+    function checkError(e) {
+        const res = (e.target.value === '') ? true : false 
+        
+        if (e.target.name === 'username') {
+            errorUsername.value = res
+        } else if (e.target.name === 'password') {
+            errorPassword.value = res
+        }
+    }
     function onSubmit() {
         errorUsername.value = username.value === '' ? true : false
         errorPassword.value = password.value === '' ? true : false
@@ -22,17 +31,26 @@
 <template>
     <form @submit.prevent="onSubmit">
         <div>
-            <input v-model="username" id="username" name="username" type="text" placeholder="username"
-                class="input-login" :class="{'bg-red-50': errorUsername}"/>
-            <input v-model="password" id="password" name="password" type="password" placeholder="password" 
-                class="input-login" :class="{'bg-red-50': errorPassword}"/>
+            <input @input="checkError" v-model="username" id="username" name="username" type="text" placeholder="username" autocomplete="off"
+                class="input-login" :class="{'input-error': errorUsername}"/>
+            <input @input="checkError" v-model="password" id="password" name="password" type="password" placeholder="password" 
+                class="input-login" :class="{'input-error': errorPassword}"/>
             <button type="submit" 
-                class="relative flex mb-4 w-full justify-center bg-green-600 p-4 text-white hover:bg-green-700">
+                class="relative flex mb-4 w-full justify-center bg-yellow-700 p-4 text-zinc-200 hover:bg-yellow-800">
                 <span>LOGIN</span>
             </button>
             <div class="text-center text-zinc-400">
-                <span>Not registered?</span> <a href="#" class="text-green-500 hover:text-green-600">Create an account</a>
+                <span>Not registered?</span> <a href="#" class="text-yellow-600 hover:text-yellow-700">Create an account</a>
             </div>
         </div>
     </form>
 </template>
+
+<style scoped>
+    .input-error {
+        border-color:indianred;
+    }
+    .input-error:focus {
+        border-color:indianred;
+    }
+</style>

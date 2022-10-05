@@ -30,7 +30,7 @@ export async function getRequest(url, params) {
                     break
                 case 400: case 422: res = 'Сервер не смог обработать запрос'
                     break
-                case 500: res = 'Сервер авторизации недоступен, попробуйет повторить позже'
+                case 500: res = 'Сервер авторизации недоступен, попробуйте повторить позже'
                     break
                 default: res = error.response.data.message
                     break

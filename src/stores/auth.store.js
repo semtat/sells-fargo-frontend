@@ -8,7 +8,7 @@ const baseLoginUrl = `${import.meta.env.VITE_API_LOGIN_URL}`
 
 export const useAuthStore = defineStore('auth', () => {
     const userSession = ref(getCookie('session')) 
-    const returnUrl = ref(null)
+    const returnUrl = ref('/menu')
     const errorRequest = reactive({
         type: null,
         data: null
