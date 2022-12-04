@@ -5,8 +5,8 @@
 </script>
 
 <template>
-    <div class="container flex flex-col flex-1 max-w-4xl text-zinc-200">
-        <TextLine color="zinc-200" style-text="header-style text-6xl" text="Menu" />
+    <div class="container flex flex-col flex-1 max-w-4xl text-secondary-lighter">
+        <TextLine color="secondary-lighter" style-text="header-style text-6xl" text="Menu" />
         <div class="my-5">
             <SubheaderMenu name="Hamburgers" />
             <ItemMenu name="Fargo Burger" price="11$" />    
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="my-5 mb-14 flex justify-center">
-            <button class="header-style bg-zinc-200 p-4 px-10 font-bold text-xl text-yellow-600 hover:bg-zinc-300">MENU DOWNLOAD</button>
+            <button class="header-style bg-secondary-lighter p-4 px-10 font-bold text-xl text-primary-light hover:bg-secondary-light">MENU DOWNLOAD</button>
         </div>
     </div>
 </template>

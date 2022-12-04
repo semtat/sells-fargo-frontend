@@ -1,5 +1,5 @@
 <template>
-    <div class="container flex max-w-4xl justify-center text-zinc-200">
+    <div class="container flex max-w-4xl justify-center text-secondary-lighter">
         About Component
     </div>
 </template>

@@ -22,12 +22,12 @@
 </script>
 
 <template>
-    <div class="flex w-screen h-screen bg-zinc-800 items-center justify-center">
+    <div class="flex w-screen h-screen bg-secondary-darker items-center justify-center">
         <template v-if="errorRequest.type === 'alert'">
             <TheNotification type="alert-warning" :data="errorRequest.data"/>
         </template>
-        <div class="relative w-full shadow-2xl max-w-md p-10 border bg-zinc-700 border-zinc-600">
-            <div class="logo-style absolute uppercase -top-16 text-5xl left-0 w-full text-center text-zinc-300">{{ name }}</div>
+        <div class="relative w-full shadow-2xl max-w-md p-10 border bg-secondary-dark border-secondary-darklight">
+            <div class="logo-style absolute uppercase -top-16 text-5xl left-0 w-full text-center text-secondary-light">{{ name }}</div>
             <LoginForm />
         </div>
     </div>

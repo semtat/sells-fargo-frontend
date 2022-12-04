@@ -18,16 +18,16 @@ html {
 }
 @layer components {
     .input-login {
-        @apply relative block mb-4 w-full appearance-none rounded-none bg-zinc-600 border border-zinc-500 p-4
-      text-zinc-200 placeholder-zinc-400 focus:z-10 focus:border-yellow-600 focus:outline-none;
+        @apply relative block mb-4 w-full appearance-none rounded-none bg-secondary-darklight border border-secondary-darklighter p-4
+      text-secondary-light placeholder-secondary focus:z-10 focus:border-primary-light focus:outline-none;
     }
     .nav-list a.router-link-exact-active {
-        @apply text-yellow-600 after:text-yellow-600 before:text-yellow-600
+        @apply text-primary-light after:text-primary-light before:text-primary-light
     }
     .nav-list a {
-        @apply whitespace-nowrap hover:text-yellow-600
-        after:content-['-'] before:content-['-'] after:text-zinc-200 before:text-zinc-200
+        @apply whitespace-nowrap hover:text-primary-light
+        after:content-['-'] before:content-['-'] after:text-secondary-light before:text-secondary-light
         after:mx-0.5 before:mx-0.5
-        hover:after:text-yellow-600 hover:before:text-yellow-600;
+        hover:after:text-primary-light hover:before:text-primary-light;
     }
 }
