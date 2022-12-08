@@ -36,11 +36,11 @@
             <input @input="checkError" v-model="password" id="password" name="password" type="password" placeholder="password" 
                 class="input-login" :class="{'input-error': errorPassword}"/>
             <button type="submit" 
-                class="relative flex mb-4 w-full justify-center bg-yellow-700 p-4 text-zinc-200 hover:bg-yellow-800">
+                class="relative flex mb-4 w-full justify-center bg-primary p-4 text-secondary-lighter hover:bg-primary-dark">
                 <span>LOGIN</span>
             </button>
-            <div class="text-center text-zinc-400">
-                <span>Not registered?</span> <a href="#" class="text-yellow-600 hover:text-yellow-700">Create an account</a>
+            <div class="text-center text-secondary">
+                <span>Not registered?</span> <a href="#" class="text-primary-light hover:text-primary">Create an account</a>
             </div>
         </div>
     </form>

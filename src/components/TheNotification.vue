@@ -23,8 +23,8 @@
 
 <template>
     <div v-if="props.type === 'alert-warning'" 
-        class="absolute top-0 w-full -z-10 opacity-0 transition-all ease-linear delay-500 text-center p-5 bg-zinc-400"
+        class="absolute top-0 w-full -z-10 opacity-0 transition-all ease-linear delay-500 text-center p-5 bg-secondary"
         :class="{'z-10 opacity-100': active}">
-        <span class="text-zinc-900 font-bold">{{ props.data }}</span>
+        <span class="text-secondary-darkest font-bold">{{ props.data }}</span>
     </div>
 </template>
