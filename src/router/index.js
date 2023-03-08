@@ -34,7 +34,12 @@ export const router = createRouter({
                     component: () => import('@/components/TheSells.vue'),
                 }
             ]
-        }
+        },
+        {
+            path: '/:pathMatch(.*)*',
+            name: '404',
+            component: () => import('@/views/404View.vue')
+        },
     ]
 })
 
